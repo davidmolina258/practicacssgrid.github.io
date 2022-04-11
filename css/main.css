@@ -1,0 +1,175 @@
+/*reset*/
+html{
+    font-family: Verdana, sans-serif;
+    font-size: 16px;
+    scroll-behavior: smooth;
+    line-height: 2rem;
+
+}
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+/*revisar esta pagina son patrones https://projects.verou.me/css3patterns/#*/
+/*----------------------------------------------------------------1era parte*/
+.container{
+    width: 100%;
+    margin-top: 2rem;
+    background-color: #fff;
+background-image:
+linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+linear-gradient(#eee .1em, transparent .1em);
+background-size: 100% 1.2em;
+
+
+/*  -------------------*/
+display: grid;
+grid-template-columns: 30% 30% 40%;
+/*indica el numero de columnas y su proporcion en anchura*/
+
+grid-template-rows: auto 250px;
+/*indica el numero de columnas y su proporcion en altura*/
+
+gap: 1rem;
+/*establece espaciado entre las grillas tanto en filas como en columnas*/
+
+column-gap: 2rem;
+/*establece espaciado entre las columnas de las grillas*/
+
+row-gap: 2rem;
+/*establece espaciado entre las filas de las grillas*/
+
+
+}
+
+.box{
+    width: 20vw;
+    height: 200px;
+    background-color: black;   
+    margin: 0 auto;
+}
+.box:hover{
+    border: 5px solid violet;
+}
+
+/*-----------------------------------------------------------------2da parte*/
+
+.texto{
+    background-color: #abced4;
+    text-align: justify;
+    padding: 1rem;
+}
+.texto:hover{
+    border: 5px solid black;
+}
+
+.container-text{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    /*esta es un valor mas practico para establecer columnas, tambien podemos usar la funcion repeat(6, 1fr)*/
+    gap:1rem;
+    grid-template-columns: repeat(3, 1fr);
+    /*minmax es los tamaños minimos y maximos de los elementos dentro del contenedor*/
+    grid-template-rows: minmax(100px, auto);
+}
+
+.nasted-grid{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 100px;
+    /*esta propiedad agraga su valor a cada uno de sus elementos, diferente de grid-temple-row que es uno por uno*/
+    gap: 1rem;
+}
+
+/*-----------------------------------------------------------------------3era parte*/
+.container-element{
+    margin-top: 2rem;
+    background-color: darkblue;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: minmax(100px, auto);
+    gap: 1rem;
+
+    /*para alinear todos elementos a la vez, tenemos 2 propiedades justify-items(vertical) y aling-items(horizontal)*/
+    justify-items: center;
+    justify-items: stretch;
+    align-items: end;
+    align-items: stretch;
+}
+.container-element>div{
+    text-align: center;
+    background-color: thistle;
+    padding: 1rem;
+}
+.container-element>div:hover{
+    border: 5px solid yellowgreen;
+}
+
+/*para alinear especificamente cada elemento tenemos justify-self(vertical) y aling-self(horizontal), selecionar cada elemento */
+.element-1{
+    justify-self: start;
+}
+.element-2{
+    justify-self: center;
+}
+.element-3{
+    justify-self: end;
+}
+.element-4{
+    align-self: start;
+}
+.element-5{
+    align-self: center;
+}
+.element-6{
+    align-self: end;
+}
+
+/*Para que cada elemento ocupe mas de una fraccion de la grilla, es necesario conocer el concepto de lineas que tiene ccs-grid, seria la cantidad de elemento +1 el total de lineas.
+usamos la propiedad grid-column su valor sera desde hasta que linea abarcara*/
+
+.element-7{
+    grid-column: 1/4;
+}
+.element-8{
+    grid-column: 1/3;
+    grid-row: 4/6;
+}
+
+
+/******************************************Parte de los conceptos (CAMBIOS PARA GITHUB)***************************************************/
+#conceptos{
+    background:
+radial-gradient(black 15%, transparent 16%) 0 0,
+radial-gradient(black 15%, transparent 16%) 8px 8px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 0 1px,
+radial-gradient(rgba(255,255,255,.1) 15%, transparent 20%) 8px 9px;
+background-color:#282828;
+background-size:16px 16px;
+
+}
+
+.container-conceptos{
+    background-color: antiquewhite;
+    width: 80%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: justify;
+}
+
+
+
+
+
+
